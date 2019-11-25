@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Hasil Algoritma Backtracking</h1>
+
+  <hr>
+  <table class="table table-striped">
+  <h3> Hasil Perhitungan</h3>
+    <tr>
+      <th>Part Number</th>
+      <th>W</th>
+      <th>P</th>
+      <th>P/W</th>
+      <th>Berat Total</th>
+      <th>Nilai Total</th>
+      <th>Recommended</th>
+     
+  
+    </tr>
+    {% for coba in coba %}
+      <tr>
+        <td>{{coba.part_number}}</td>
+        <td>{{coba.W}}</td>
+        <td>{{coba.P}}</td>
+        <td>{{coba.hasil}}</td>
+        <td>{{coba.berat_total}}</td>
+        <td>{{coba.nilai_total}}</td>
+        <td>{{coba.rekomendasi}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+<body>
+    <table class="table table-striped">
+        <h3> Note: 
+          <br>
+          <br>
+            <p><small>Jika Nilai Total > 85, maka akan ditempatkan pada LH-A(1-39)</small></p> 
+            <p><small>Jika Nilai Total > 75, maka akan ditempatkan pada LH-B(1-39)</small></p>
+            <p><small>Jika Nilai Total > 60, maka akan ditempatkan pada LH-C(1-39)</small></p>
+            <p><small>Jika Nilai Total > 50, maka akan ditempatkan pada LH-D(1-39)</small></p>
+            <p><small>Jika Nilai Total >= 49, maka akan ditempatkan pada LH-E(1-39)</small></p>
+           
+        </h3>
+        
+</body>
+{% endblock %}

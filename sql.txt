@@ -1,0 +1,32 @@
+select (p/w) as hasil from ks 
+
+CREATE VIEW view_ks
+AS
+SELECT p, w from ks;
+ 
+CREATE VIEW vieww
+AS
+SELECT w, p, (p/w) as hasil, (max(p)-1+max(p)) as nilai_total from ks;
+
+select (max(p)-1+max(p)) from view_algo
+
+CREATE VIEW view_bc AS
+SELECT 
+part_number,
+W, 
+P, 
+hasil,
+berat_total,
+nilai_total,
+rekomendasi 
+from view_algo,view_hasil,view_berat,view_recom
+
+CREATE view view_recom
+AS
+SELECT nilai_total, CASE
+WHEN nilai_total >85.0 THEN 'LH-A(1-39)'
+WHEN nilai_total >75.0 THEN 'LH-B(1-39)'
+WHEN nilai_total >60.0 THEN 'LH-C(1-39)'
+WHEN nilai_total >50.0 THEN 'LH-D(1-39)'
+WHEN nilai_total >=49.0 THEN 'LH-E(1-39)'
+END AS rekomendasi from view_hasil
